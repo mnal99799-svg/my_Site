@@ -1,125 +1,149 @@
-<section id="services" style="background:#fff; color:#444; padding:40px; font-family:sans-serif;">
-  <h2 style="text-align:center; color:#e91e63; margin-bottom:25px;">Our Services</h2>
-  <p style="text-align:center; margin-bottom:40px;">
-    Relaxing candles, hot stones, and soothing aroma — pick your favorite massage style.
-  </p>
+import React from "react";
+import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
+import { Star } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 
-  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:20px;">
-
-    <!-- Swedish Massage -->
-    <div style="background:#fff; border-radius:12px; box-shadow:0 4px 10px #0002; overflow:hidden;">
-      <img src="https://images.unsplash.com/photo-1588776814546-ec07fef0b6f8" alt="Swedish Massage" style="width:100%; height:200px; object-fit:cover;">
-      <div style="padding:15px;">
-        <h3 style="color:#e91e63;">Swedish Massage</h3>
-        <p>Smooth, flowing strokes for full-body relaxation.</p>
+// ⭐ مكوّن النجوم
+function Stars({ value = 4.8, reviews = 0 }) {
+  const full = Math.floor(value);
+  const half = value - full >= 0.5;
+  return (
+    <div className="flex items-center gap-2 mt-2">
+      <div className="flex items-center">
+        {Array.from({ length: 5 }).map((_, i) => {
+          const filled = i < full || (i === full && half);
+          return (
+            <Star
+              key={i}
+              className={h-4 w-4 ${filled ? "fill-yellow-400 text-yellow-400" : "text-gray-300"}}
+            />
+          );
+        })}
       </div>
+      <span className="text-xs text-gray-500">{value.toFixed(1)} ({reviews.toLocaleString()})</span>
     </div>
+  );
+}
 
-    <!-- Hot Stone Massage -->
-    <div style="background:#fff; border-radius:12px; box-shadow:0 4px 10px #0002; overflow:hidden;">
-      <img src="https://images.unsplash.com/photo-1600334129128-7a87ce104b9c" alt="Hot Stone Massage" style="width:100%; height:200px; object-fit:cover;">
-      <div style="padding:15px;">
-        <h3 style="color:#e91e63;">Hot Stone Massage</h3>
-        <p>Heated stones melt tension for deep relief.</p>
-      </div>
+// البيانات + Badge
+const SAMPLE = [
+  {
+    id: "m1",
+    title: "Relax & Recharge – Full Body Massage",
+    brand: "Al-Nodaman Spa",
+    price: 85,
+    rating: 4.9,
+    reviews: 520,
+    badge: "Best Seller",
+    description: "A soothing full-body massage designed to melt away stress and recharge your energy.",
+    image: "https://images.unsplash.com/photo-1556228724-4c1d1a7761df",
+    url: "https://yourdomain.com/booking/relax",
+  },
+  {
+    id: "m2",
+    title: "Hot Stone Bliss – Melt Away Stress",
+    brand: "Al-Nodaman Spa",
+    price: 95,
+    rating: 4.8,
+    reviews: 410,
+    badge: "Popular",
+    description: "Warm stones placed on key points release tension and provide deep relaxation.",
+    image: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1",
+    url: "https://yourdomain.com/booking/hot-stone",
+  },
+  {
+    id: "m3",
+    title: "Deep Tissue Therapy – Relieve Muscle Tension",
+    brand: "Al-Nodaman Spa",
+    price: 110,
+    rating: 4.7,
+    reviews: 385,
+    badge: "Recommended",
+    description: "Targeted massage for sore muscles and knots. Ideal for athletes and active lifestyles.",
+    image: "https://images.unsplash.com/photo-1609899537870-1c750d1543c6",
+    url: "https://yourdomain.com/booking/deep-tissue",
+  },
+  {
+    id: "m4",
+    title: "Aromatherapy Escape – Heal Your Senses",
+    brand: "Al-Nodaman Spa",
+    price: 90,
+    rating: 4.8,
+    reviews: 280,
+    badge: "New",
+    description: "Essential oils combined with gentle massage to relax the body and calm the mind.",
+    image: "https://images.unsplash.com/photo-1512255507050-70f8d2e6b9c6",
+    url: "https://yourdomain.com/booking/aroma",
+  },
+  {
+    id: "m5",
+    title: "Foot Reflexology – Walk Out Refreshed",
+    brand: "Al-Nodaman Spa",
+    price: 65,
+    rating: 4.6,
+    reviews: 240,
+    badge: "Popular",
+    description: "Focused on the feet to improve circulation, reduce fatigue, and restore balance.",
+    image: "https://images.unsplash.com/photo-1600436102293-0e7f94a6f647",
+    url: "https://yourdomain.com/booking/foot",
+  },
+  {
+    id: "m6",
+    title: "Couples Retreat – Share the Serenity",
+    brand: "Al-Nodaman Spa",
+    price: 150,
+    rating: 4.9,
+    reviews: 195,
+    badge: "Luxury",
+    description: "Enjoy side-by-side massages with your partner in a calming, romantic atmosphere.",
+    image: "https://images.unsplash.com/photo-1519824145371-296894a0daa9",
+    url: "https://yourdomain.com/booking/couples",
+  }
+];
+
+export default function MassageServices() {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+      {SAMPLE.map((p) => (
+        <Card key={p.id} className="shadow-lg rounded-2xl overflow-hidden relative">
+          {/* Badge فوق الصورة */}
+          {p.badge && (
+            <span className="absolute top-3 left-3">
+              <Badge className="bg-pink-500 text-white">{p.badge}</Badge>
+            </span>
+          )}
+
+          <CardHeader>
+            <CardTitle className="text-lg font-bold">{p.title}</CardTitle>
+          </CardHeader>
+
+          <CardContent>
+            <img
+              src={p.image}
+              alt={p.title}
+              className="h-48 w-full object-cover rounded-md"
+              loading="lazy"
+            />
+            <p className="mt-2 text-sm text-gray-600 italic">{p.brand}</p>
+            <Stars value={p.rating} reviews={p.reviews} />
+            <p className="mt-2 text-sm text-gray-700">{p.description}</p>
+            <p className="mt-2 font-semibold">${p.price}</p>
+          </CardContent>
+
+          <CardFooter>
+            <Button asChild className="w-full bg-pink-500 hover:bg-pink-600 text-white">
+              <a href={p.url} target="_blank" rel="noopener noreferrer">
+                Book Now
+              </a>
+            </Button>
+          </CardFooter>
+        </Card>
+      ))}
     </div>
-
-    <!-- Aromatherapy -->
-    <div style="background:#fff; border-radius:12px; box-shadow:0 4px 10px #0002; overflow:hidden;">
-      <img src="https://images.unsplash.com/photo-1609899598516-73c8d8022b41" alt="Aromatherapy" style="width:100%; height:200px; object-fit:cover;">
-      <div style="padding:15px;">
-        <h3 style="color:#e91e63;">Aromatherapy</h3>
-        <p>Essential oils + candle ambience to calm the mind.</p>
-      </div>
-    </div>
-
-    <!-- Foot Massage -->
-    <div style="background:#fff; border-radius:12px; box-shadow:0 4px 10px #0002; overflow:hidden;">
-      <img src="https://images.unsplash.com/photo-1617038260894-1b9f82bc5e1b" alt="Foot Massage" style="width:100%; height:200px; object-fit:cover;">
-      <div style="padding:15px;">
-        <h3 style="color:#e91e63;">Foot Massage</h3>
-        <p>Reflexology to boost circulation and lightness.</p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<!-- Booking / Payment Form -->
-<section id="booking" style="background:#fff; color:#444; padding:40px; font-family:sans-serif;">
-  <h2 style="text-align:center; color:#e91e63; margin-bottom:25px;">Booking / Payment Request</h2>
-
-  <form action="https://formspree.io/f/xrblwklo" method="POST" style="max-width:500px; margin:auto; background:#ffe6f0; padding:20px; border-radius:12px; box-shadow:0 4px 10px #0002;">
-    
-    <div class="field" style="margin-bottom:15px;">
-      <label>Name</label>
-      <input name="name" required placeholder="Your full name" autocomplete="name" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;">
-    </div>
-
-    <div class="field" style="margin-bottom:15px;">
-      <label>Email</label>
-      <input type="email" name="email" required placeholder="you@email.com" autocomplete="email" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;">
-    </div>
-
-    <div class="field" style="margin-bottom:15px;">
-      <label>Service</label>
-      <select name="service" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;">
-        <option value="Swedish">Swedish Massage</option>
-        <option value="Deep Tissue">Deep Tissue</option>
-        <option value="Hot Stone">Hot Stone</option>
-        <option value="Foot">Foot Massage</option>
-        <option value="Other">Other</option>
-      </select>
-    </div>
-
-    <div class="field" style="margin-bottom:15px;">
-      <label>Notes</label>
-      <textarea name="notes" placeholder="Any extra details..." style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;"></textarea>
-    </div>
-
-    <hr style="border-color:#f8bbd0; margin:20px 0">
-
-    <div class="field" style="margin-bottom:15px;">
-      <label>Cardholder Name</label>
-      <input name="card_name" placeholder="Name on card" autocomplete="cc-name" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;">
-    </div>
-
-    <div class="field" style="margin-bottom:15px;">
-      <label>Card Number</label>
-      <input name="card_number" inputmode="numeric" autocomplete="cc-number" placeholder="4242 4242 4242 4242" maxlength="19" pattern="[0-9\s]{12,19}" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;">
-    </div>
-
-    <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:15px;">
-      <div>
-        <label>Expiry (MM/YY)</label>
-        <input name="card_exp" inputmode="numeric" autocomplete="cc-exp" placeholder="12/27" pattern="(0[1-9]|1[0-2])\/\d{2}" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;">
-      </div>
-      <div>
-        <label>CVV</label>
-        <input name="card_cvv" inputmode="numeric" autocomplete="cc-csc" placeholder="123" maxlength="4" pattern="\d{3,4}" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;">
-      </div>
-    </div>
-
-    <div class="field" style="margin-bottom:15px;">
-      <label>Billing ZIP</label>
-      <input name="billing_zip" inputmode="numeric" placeholder="10001" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:8px;">
-    </div>
-
-    <label style="display:flex; gap:8px; align-items:center; font-size:14px; margin-bottom:15px;">
-      <input type="checkbox" required>
-      I understand this is a demo payment form. No real charges will be made.
-    </label>
-
-    <button type="submit" style="width:100%; padding:12px; background:#e91e63; color:#fff; border:none; border-radius:8px; font-size:16px; font-weight:bold; cursor:pointer;">
-      Submit Request
-    </button>
-  </form>
-
-  <p style="margin-top:20px; text-align:center; color:#e91e63; font-weight:700;">
-    ✅ Thank you! Your request has been received. We’ll contact you shortly.
-  </p>
-</section>
+  );
+}
  
+
 
 
