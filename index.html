@@ -115,47 +115,27 @@
     </div>
   </section>
 
-  <section id="book">
-    <h2>Book Now</h2>
-    <p class="muted">Fill the form; we’ll confirm by email/WhatsApp.</p>
-    <div class="contact">
-      <form action="YOUR_FORMSPREE_ENDPOINT" method="POST" class="card">
-        <label>Full Name<input name="name" required placeholder="John Doe"/></label>
-        <label>Email<input type="email" name="email" required placeholder="you@email.com"/></label>
-        <label>WhatsApp (US +1)<input name="whatsapp" placeholder="+1 212 555 0123"/></label>
-        <label>City / State<input name="city" placeholder="New York, NY"/></label>
-        <label>Package
-          <select name="package" required>
-            <option value="basic">Basic (45m)</option>
-            <option value="premium">Premium (60m)</option>
-            <option value="vip">VIP (90m)</option>
-          </select>
-        </label>
-        <label>Notes<textarea name="message" placeholder="Preferred date/time, at-home or studio…"></textarea></label>
-        <button class="btn btn-primary" type="submit">Request Booking</button>
-      </form>
-
-      <div class="card">
-        <h3 style="margin-top:0">Contact</h3>
-        <ul class="list">
-          <li>Phone: +1 (212) 555-0123</li>
-          <li>WhatsApp: +1 (212) 555-0123</li>
-          <li>Hours: 10:00 AM – 11:00 PM (local)</li>
-          <li>Service area: NYC & nearby</li>
-        </ul>
-        <p class="muted" style="margin-top:12px">We never collect card details on this page. Payments are handled via a secure provider.</p>
-      </div>
+  <section id="booking">
+  <h2>Booking / Payment Request</h2>
+  <form action="https://formspree.io/f/xrblwklo" method="POST" class="card" style="background:#ffffff22; color:#fff">
+    <div class="field">
+      <label>Name</label>
+      <input name="name" required placeholder="Your full name" />
     </div>
-  </section>
-
-  <footer class="wrap">
-    <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
-      <span>© <span id="y"></span> Relax Massage</span>
-      <span class="muted">Real relief from the first session.</span>
+    <div class="field">
+      <label>Email</label>
+      <input type="email" name="email" required placeholder="you@email.com" />
     </div>
-  </footer>
-</main>
-<script>document.getElementById('y').textContent=new Date().getFullYear()</script> 
-https://formspree.io/f/xrblwklo
-</body>
-</html>
+    <div class="field">
+      <label>Service</label>
+      <input name="service" placeholder="Massage / Therapy / Other..." />
+    </div>
+    <div class="field">
+      <label>Notes</label>
+      <textarea name="notes" placeholder="Any extra details..."></textarea>
+    </div>
+    <button class="submit" type="submit">Submit Request</button>
+  </form>
+
+  <p style="margin-top:15px; color:#90EE90; font-weight:700;">✅ Thanks! We will contact you after receiving your request.</p>
+</section>
