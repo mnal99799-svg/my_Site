@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Relax Massage | Professional Sessions & VIP Packages</title>
+  <meta name="description" content="Professional Swedish, Deep Tissue, Hot Stone & Foot massage. Clear pricing, fast booking, VIP at-home sessions.">
+  <style>
+    :root{--bg:#0f172a;--card:#111827;--muted:#94a3b8;--text:#e5e7eb;--brand:#22c55e;--brand2:#06b6d4;--r:18px;--sh:0 10px 30px #0005}
+    *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:linear-gradient(180deg,#0b1024,#0f172a);color:var(--text)}
+    .wrap{width:min(1100px,92%);margin:auto}
+    header{position:sticky;top:0;z-index:10;backdrop-filter:saturate(140%) blur(10px);background:#0f172acc;border-bottom:1px solid #ffffff18}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .logo{display:flex;gap:10px;align-items:center;font-weight:800}
+    .badge{width:36px;height:36px;border-radius:50%;background:radial-gradient(circle at 30% 30%,#34d399,#06b6d4);box-shadow:var(--sh)}
+    a.btn{display:inline-block;padding:12px 18px;border-radius:14px;font-weight:700;text-decoration:none;border:1px solid transparent;transition:.2s}
+    .btn-primary{background:linear-gradient(135deg,var(--brand),var(--brand2));color:#081018;box-shadow:var(--sh)}
+    .btn-ghost{border-color:#ffffff2a;color:var(--text)}
+    .btn-primary:hover,.btn-ghost:hover{transform:translateY(-2px)}
+    section{padding:48px 0}
+    .hero{display:grid;grid-template-columns:1.1fr .9fr;gap:22px}
+    .card{background:linear-gradient(180deg,#ffffff0a,#ffffff06);border:1px solid #ffffff12;border-radius:var(--r);padding:20px;box-shadow:var(--sh)}
+    h1{font-size:clamp(28px,3.8vw,44px);line-height:1.2;margin:10px 0}
+    p.muted{color:var(--muted)}
+    .chips{display:flex;gap:10px;flex-wrap:wrap;margin:10px 0 16px}
+    .chip{font-size:12px;border:1px solid #ffffff25;border-radius:999px;padding:6px 10px;color:#cbd5e1}
+    .grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+    .price{font-size:28px;font-weight:900;background:linear-gradient(135deg,#34d399,#22d3ee);-webkit-background-clip:text;color:transparent}
+    .list{list-style:none;padding:0;margin:8px 0 0} .list li{padding:6px 0;color:#d1d5db}
+    .contact{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    label{font-size:14px;margin-bottom:6px;color:#cbd5e1;display:block}
+    input,select,textarea{width:100%;padding:12px 14px;border-radius:12px;background:#02061799;border:1px solid #ffffff20;color:var(--text);outline:none}
+    textarea{min-height:120px;resize:vertical}
+    footer{padding:28px 0;border-top:1px solid #ffffff18;color:#94a3b8;margin-top:36px}
+    @media(max-width:880px){.hero,.contact{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <div class="logo"><span class="badge"></span><span>Relax Massage</span></div>
+    <nav style="display:flex;gap:10px">
+      <a class="btn btn-ghost" href="#services">Services</a>
+      <a class="btn btn-ghost" href="#pricing">Pricing</a>
+      <a class="btn btn-primary" href="#book">Book Now</a>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div class="card">
+      <div class="chips">
+        <span class="chip">Licensed therapists</span>
+        <span class="chip">At-home service</span>
+        <span class="chip">Men & Women</span>
+      </div>
+      <h1>Professional massage — real relief & clear US pricing</h1>
+      <p class="muted">Swedish, Deep Tissue, Hot Stone & Foot Massage. Choose Basic, Premium or VIP packages. Same-day appointments available in major US cities.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px">
+        <a class="btn btn-primary" href="#pricing">See Packages</a>
+        <a class="btn btn-ghost" href="#services">Explore Services</a>
+      </div>
+    </div>
+    <div class="card">
+      <h3 style="margin-top:0">Why choose us?</h3>
+      <ul class="list">
+        <li>Original essential oils</li>
+        <li>Sanitized, single-use linens</li>
+        <li>Flexible hours 10am–11pm</li>
+        <li>Pay on arrival or via secure link</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2>Services</h2>
+    <p class="muted">Pick what fits your needs.</p>
+    <div class="grid">
+      <div class="card"><h3>Swedish (60m)</h3><p class="muted">Relaxation & light tension relief.</p></div>
+      <div class="card"><h3>Deep Tissue (60–90m)</h3><p class="muted">Targets chronic, deep muscle knots.</p></div>
+      <div class="card"><h3>Hot Stone</h3><p class="muted">Warm basalt stones for deep relaxation.</p></div>
+      <div class="card"><h3>Foot Massage</h3><p class="muted">Reflexology-inspired circulation boost.</p></div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <h2>Pricing (USD)</h2>
+    <p class="muted">Transparent, US-friendly pricing. Edit freely.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>Basic</h3>
+        <div><span class="price">$45</span> / 45 min</div>
+        <ul class="list">
+          <li>Swedish session</li><li>Essential oil</li><li>Sanitized linens</li>
+        </ul>
+        <div style="margin-top:12px"><a class="btn btn-ghost" href="#book">Book Basic</a></div>
+      </div>
+      <div class="card">
+        <h3>Premium</h3>
+        <div><span class="price">$69</span> / 60 min</div>
+        <ul class="list">
+          <li>Swedish or Deep Tissue</li><li>Premium oil selection</li><li>+10 min extension</li>
+        </ul>
+        <div style="margin-top:12px"><a class="btn btn-ghost" href="#book">Book Premium</a></div>
+      </div>
+      <div class="card" style="border:1px solid #22c55e66">
+        <h3>VIP</h3>
+        <div><span class="price">$99</span> / 90 min</div>
+        <ul class="list">
+          <li>Deep + Hot Stone</li><li>Signature oils & care</li><li>At-home session (city limits)</li>
+        </ul>
+        <div style="margin-top:12px"><a class="btn btn-primary" href="#book">Book VIP</a></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="book">
+    <h2>Book Now</h2>
+    <p class="muted">Fill the form; we’ll confirm by email/WhatsApp.</p>
+    <div class="contact">
+      <form action="YOUR_FORMSPREE_ENDPOINT" method="POST" class="card">
+        <label>Full Name<input name="name" required placeholder="John Doe"/></label>
+        <label>Email<input type="email" name="email" required placeholder="you@email.com"/></label>
+        <label>WhatsApp (US +1)<input name="whatsapp" placeholder="+1 212 555 0123"/></label>
+        <label>City / State<input name="city" placeholder="New York, NY"/></label>
+        <label>Package
+          <select name="package" required>
+            <option value="basic">Basic (45m)</option>
+            <option value="premium">Premium (60m)</option>
+            <option value="vip">VIP (90m)</option>
+          </select>
+        </label>
+        <label>Notes<textarea name="message" placeholder="Preferred date/time, at-home or studio…"></textarea></label>
+        <button class="btn btn-primary" type="submit">Request Booking</button>
+      </form>
+
+      <div class="card">
+        <h3 style="margin-top:0">Contact</h3>
+        <ul class="list">
+          <li>Phone: +1 (212) 555-0123</li>
+          <li>WhatsApp: +1 (212) 555-0123</li>
+          <li>Hours: 10:00 AM – 11:00 PM (local)</li>
+          <li>Service area: NYC & nearby</li>
+        </ul>
+        <p class="muted" style="margin-top:12px">We never collect card details on this page. Payments are handled via a secure provider.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer class="wrap">
+    <div style="display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap">
+      <span>© <span id="y"></span> Relax Massage</span>
+      <span class="muted">Real relief from the first session.</span>
+    </div>
+  </footer>
+</main>
+<script>document.getElementById('y').textContent=new Date().getFullYear()</script> 
+https://formspree.io/f/xrblwklo
+</body>
+</html>
