@@ -1,1 +1,128 @@
+<section id="services">
+  <h2 style="color:#d63384">Our Services</h2>
+  <p class="muted">Relaxing candles, hot stones, and soothing aromas — pick your bliss.</p>
+
+  <div class="cards">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1588776814546-ec7f3b8b92e8?auto=format&fit=crop&w=1200&q=80" alt="Swedish Massage">
+      <div class="pad">
+        <h3>Swedish Massage</h3>
+        <p>Smooth, flowing strokes for full-body relaxation.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1600353061764-bfe6a3f5bb76?auto=format&fit=crop&w=1200&q=80" alt="Hot Stone Massage">
+      <div class="pad">
+        <h3>Hot Stone Massage</h3>
+        <p>Heated stones melt tension for deep relief.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1616690710400-3dc37c843ce4?auto=format&fit=crop&w=1200&q=80" alt="Aromatherapy">
+      <div class="pad">
+        <h3>Aromatherapy</h3>
+        <p>Essential oils + candle ambience to calm the mind.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1611078489935-efdd6ec8abca?auto=format&fit=crop&w=1200&q=80" alt="Foot massage">
+      <div class="pad">
+        <h3>Foot Massage</h3>
+        <p>Reflexology to boost circulation and lightness.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="booking">
+  <h2 style="color:#d63384">Booking / Payment Request</h2>
+  <form action="https://formspree.io/f/xrblwklo" method="POST" class="card" style="background:#fff; color:#333; border:2px solid #f8a5c2; padding:20px; border-radius:12px">
+    
+    <div class="field">
+      <label>Name</label>
+      <input name="name" required placeholder="Your full name" autocomplete="name" />
+    </div>
+
+    <div class="field">
+      <label>Email</label>
+      <input type="email" name="email" required placeholder="you@email.com" autocomplete="email" />
+    </div>
+
+    <div class="field">
+      <label>Service</label>
+      <select name="service">
+        <option value="Swedish">Swedish Massage</option>
+        <option value="Deep Tissue">Deep Tissue</option>
+        <option value="Hot Stone">Hot Stone</option>
+        <option value="Foot">Foot Massage</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Notes</label>
+      <textarea name="notes" placeholder="Any extra details..."></textarea>
+    </div>
+
+    <hr style="border-color:#f8a5c2; margin:10px 0">
+
+    <!-- Payment (demo only) -->
+    <div class="field">
+      <label>Cardholder Name</label>
+      <input name="card_name" placeholder="Name on card" autocomplete="cc-name" />
+    </div>
+
+    <div class="field">
+      <label>Card Number</label>
+      <input name="card_number"
+             inputmode="numeric"
+             autocomplete="cc-number"
+             placeholder="4242 4242 4242 4242"
+             maxlength="19"
+             pattern="[0-9\s]{12,19}" />
+    </div>
+
+    <div class="field" style="display:grid; grid-template-columns:1fr 1fr; gap:12px">
+      <div>
+        <label>Expiry (MM/YY)</label>
+        <input name="card_exp"
+               inputmode="numeric"
+               autocomplete="cc-exp"
+               placeholder="12/27"
+               pattern="(0[1-9]|1[0-2])\/\d{2}" />
+      </div>
+      <div>
+        <label>CVV</label>
+        <input name="card_cvv"
+               inputmode="numeric"
+               autocomplete="cc-csc"
+               placeholder="123"
+               maxlength="4"
+               pattern="\d{3,4}" />
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Billing ZIP</label>
+      <input name="billing_zip" inputmode="numeric" placeholder="10001" />
+    </div>
+
+    <label style="display:flex; gap:8px; align-items:center; font-size:14px; color:#d63384">
+      <input type="checkbox" required>
+      I understand this is a demo payment form. No real charges will be made.
+    </label>
+
+    <button class="submit" type="submit" style="background:#d63384; color:#fff; padding:10px 20px; border:none; border-radius:8px; font-weight:600; cursor:pointer">
+      Submit Request
+    </button>
+  </form>
+
+  <!-- رسالة شكر -->
+  <p style="margin-top:15px; color:#d63384; font-weight:700; text-align:center;">
+    💖 Thank you! Your request has been received — we’ll contact you shortly.
+  </p>
+</section>
 
